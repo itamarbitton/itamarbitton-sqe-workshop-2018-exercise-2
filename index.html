@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table {
+            width: 100%;
+            height: 100%;
+            table-layout: fixed;
+        }
+
+        #code {
+            width: 100%;
+            height: 80vh;
+        }
+        #args{
+            width: 100%;
+            height: 5vh;
+        }
+
+        textarea {
+            width: 95%;
+            height: 95%;
+            position: relative;
+            border-style: ridge ;
+        }
+        .label {
+            color: #333333;
+            font-size: 20px;
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            padding: 8px;
+        }
+        #result {
+            font-family: monospace;
+            font-size: 14px;
+            border-collapse: collapse;
+            width: 100%;
+            height: 77vh;
+            bottom: 76px;
+            position: relative;
+            border-style: ridge ;
+
+        }
+
+        /*#result td, #result th {*/
+        /*border: 1px solid #ddd;*/
+        /*padding: 8px;*/
+        /*}*/
+
+        /*#result tr:nth-child(even) {*/
+        /*background-color: #f2f2f2;*/
+        /*}*/
+
+        /*#result tr:hover {*/
+        /*background-color: #ddd;*/
+        /*}*/
+        /*#result tr td:nth-child(1),*/
+        /*tr td:nth-child(3),*/
+        /*tr td:nth-child(4),*/
+        /*tr td:nth-child(5)*/
+        /*{ !* I don't think they are 0 based *!*/
+        /*text-align: center;*/
+        /*}*/
+        /*#result th {*/
+        /*padding-top: 12px;*/
+        /*padding-bottom: 12px;*/
+        /*text-align: center;*/
+        /*background-color: #2f89fc;*/
+        /*color: white;*/
+        /*}*/
+    </style>
+</head>
+<body >
+<div >
+    <table >
+        <tr>
+        <td>
+
+        </td>
+            <div>
+                <label class="label info">Enter arguments here:</label>
+            </div>
+            <div class="textAreaWrapper" id="args">
+                <textarea id="argsPlaceholder" title="Enter code here"></textarea>
+            </div>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <label class="label info">Enter code here:</label>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <label class="label info">Result:</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="textAreaWrapper" id="code">
+                    <textarea id="codePlaceholder" title="Enter code here"></textarea>
+                </div>
+            </td>
+            <td>
+                <div class="textAreaWrapper" id="result" style="position: initial">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <button id="codeSubmissionButton">Parse code</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <script src="dist/bundle.js"></script>
+</div>
+</body>
+</html>
