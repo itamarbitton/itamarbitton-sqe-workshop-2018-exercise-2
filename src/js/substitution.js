@@ -92,17 +92,14 @@ function substituteVariableDeclaration(parsedCode, env, code) {
 
 function substituteAssignmentExpression(parsedCode, env, code) {
     let name = escodegen.generate(parsedCode.left);
-    let value = enviromentSub(parsedCode.right, env);
-    env[name] = value;
+    let val = enviromentSub(parsedCode.right, env);
+    env[name] = val;
 
-    let lineNum = parsedCode.loc.start.line - 1;
-    let line = code[lineNum];
-    let pre = line.substring(0,parsedCode.right.loc.start.column);
-    let post = line.substring(parsedCode.right.loc.end.column);
-    if(args.includes(name))
-        code[lineNum] = pre + value +  post;
-    else
-        code[lineNum] = '';
+    let lineIdx = parsedCode.loc.start.line - 1;
+    let line = code[lineIdx];
+    let beforeAss = line.substring(0,parsedCode.right.loc.start.column);
+    let afterAss = line.substring(parsedCode.right.loc.end.column);
+    code[lineIdx] = args.includes(name) ? beforeAss + val +  afterAss : '';
     return code;
 }
 
