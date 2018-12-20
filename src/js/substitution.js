@@ -90,6 +90,8 @@ function substituteVariableDeclaration(parsedCode, env, code) {
     return code;
 }
 
+
+
 function substituteAssignmentExpression(parsedCode, env, code) {
     let name = escodegen.generate(parsedCode.left);
     let val = enviromentSub(parsedCode.right, env);
